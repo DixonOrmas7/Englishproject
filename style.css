@@ -1,0 +1,30 @@
+body {
+background-color:blue;
+border-style:dotted;
+border-color: black;
+border-width:20px;
+}
+img {
+border-style:dashed;
+border-width:5px;
+border-color:black;
+}
+
+h1{
+color: black;
+
+}
+
+h4 {
+color: black;
+}
+form{
+color: black;
+
+}
+a {
+color:black;
+}
+a:hover {
+color: red;
+}

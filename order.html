@@ -1,0 +1,148 @@
+<!--made by Alex, period 7, 3/1/23-->
+<!DOCTYPE html>
+<html>
+<head>
+<!--define the title of the web page(web page tab name)-->
+<title>Order here</title>
+
+<!--embed JavaScript code into the web page-->
+<script>
+
+//check to see if the user completed step 1
+//make an alert
+/*two equal signs == means you are checking to see if 
+something is actually equal to something else; one equal sign means
+ you are assining what is on the left of the equal sign to what is 
+ on the right of it */
+function doSubmit(){
+
+
+if (validateText() == false)
+{
+
+alert("Required data missing in step 1");
+return;
+}
+if (validateRadio() == false){
+alert("Required data missing in step 2");
+return;
+}
+alert("Your order has been submitted (get scammed idiot)");
+return;
+}
+//create the function to check for user information in step 1
+//if the length property of each input field is zero,
+//the user will receive an error message
+function validateText(){
+
+var customer = document.CarForm.customer.value;
+if(customer.length == 0) return false;
+var address = document.CarForm.address.value;
+if(address.length == 0) return false;
+var city = document.CarForm.city.value;
+if(city.length == 0) return false;
+var phone = document.CarForm.phone.value;
+if (phone.length == 0) return false;
+var card = document.CarForm.card.value;
+if (card.length == 0) return false;
+
+var state = document.CarForm.state.value;
+if (state.length == 0) return false;
+var zip = document.CarForm.zip.value;
+if (zip.length == 0) return false;
+return true;
+}
+//clear input from the user on the form if the clear button is clicked
+function doClear(){
+document.CarForm.customer.value = "";
+document.CarForm.address.value = "";
+document.CarForm.city.value = "";
+document.CarForm.state.value = "";
+document.CarForm.zip.value = "";
+document.CarForm.phone.value = "";
+document.CarForm.card.value="";
+
+document.CarForm.models[0].checked = false;
+document.CarForm.models[1].checked = false;
+document.CarForm.models[2].checked = false;
+
+document.CarForm.addins[0].checked = false;
+document.CarForm.addins[1].checked = false;
+document.CarForm.addins[2].checked = false;
+document.CarForm.addins[3].checked = false;
+document.CarForm.addins[4].checked = false;
+document.CarForm.addins[5].checked = false;
+return;
+}
+
+//create function to see if a radio button is selected
+function validateRadio()
+{
+if (document.CarForm.models[0].checked) return true;
+if (document.CarForm.models[1].checked) return true;
+if (document.CarForm.models[2].checked) return true;
+return false;
+}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--create the form-->
+<form name="CarForm">
+<!--what the user sees-->
+<h1>Order Heal and Peal</h1>
+<h2>Very cheap heal and peals</h2>
+<h6>This is a scam lol</h6>
+<!--I inserted the same cookie image three times-->
+<!--I added a right margin of 10px on the style page to create space in between the images-->
+<!--you can select your own image -->
+
+<p>
+<!--Create input boxes for user information-->
+<!--"size refers to field length-->
+<!--"&nbsp" refers to non-breaking space-->
+</p>
+<h4>Step1: Enter your contact information:</h4>
+<font face ="Courier New">
+Name:  &nbsp;&nbsp;&nbsp;<input name="customer" size="53" type="text">
+<br>
+Address:  <input name="address" size="53" type="text">
+<br>
+City:  &nbsp;&nbsp;&nbsp;<input name="city" size="53" type="text">
+State:  <input name="state" size="2" type="text">
+Zip:  <input name="zip" size ="5" type="text">
+<br>
+Phone:  &nbsp;&nbsp;<input name="phone" size ="53" type="text">
+<br>
+Card:   &nbsp;&nbsp;&nbsp;<input name="card" size ="53" type="text">
+<br>
+</font>
+</p>
+<!--create the buttons for car models-->
+<p>
+<h4>Step 2: Select the bundle you want</h4>
+<font face ="Courier New">
+<input name="models" type="radio">Basic($29.99)
+<input name="models" type="radio">Standard ($49.99)
+<input name="models" type="radio">Deluxe ($99.99)<br>
+</font>
+</p>
+<p>
+<!--create the checkboxes for addins-->
+<h4>Step 3: Select the color(s) you want:</h4>
+<font face="Courier New">
+<input name="addins" type="checkbox">Red
+<input name="addins" type="checkbox">Blue
+<input name="addins" type="checkbox">Cyan<br>
+<input name="addins" type="checkbox">Green
+<input name="addins" type="checkbox">Pink
+<input name="addins" type="checkbox">Purple<br>
+</font>
+</p>
+<!--create buttons to place and clear the form-->
+<input type="button" value="Submit Order" onClick="doSubmit()">
+<input type="button" value="Clear Entries" onClick="doClear()">
+<h2>Back to home page</h2>
+<a href="home.html">Home Page</a>
+<h2>Problem?</h2>
+<a href="ContactHeal.html">Contact Info</a>
